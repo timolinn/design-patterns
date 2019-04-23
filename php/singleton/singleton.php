@@ -38,7 +38,7 @@ trait SingletonTrait
     {
 
         if (!isset(static::$instance)) {
-            static::$instance = new Singleton();
+            static::$instance = new static;
         }
 
         return static::$instance;
@@ -60,6 +60,6 @@ class Mongoose
     use SingletonTrait;
 }
 
-$mongoose1 = Singleton::getInstance();
-$mongoose2 = Singleton::getInstance();
+$mongoose1 = Mongoose::getInstance();
+$mongoose2 = Mongoose::getInstance();
 var_dump($mongoose1 === $mongoose2);
