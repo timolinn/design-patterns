@@ -1,7 +1,6 @@
-# typescript-design-patterns
+# Design Patterns.
 
-Design Patterns implemented in TypeScript.
-
+Design Patterns implemented in PHP and TypeScript.
 
 ### Three categories of Design Patterns
 
