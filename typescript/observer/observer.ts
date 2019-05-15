@@ -44,14 +44,18 @@ class Subject implements Observable {
         this.observers.remove(observer);
     }
 
-    public notify() {
+    public notify(): void {
         const observerCount = this.observers.count();
         for (let i = 0; i < observerCount; i++) {
             this.observers.get(i).update(this.context());
         }
     }
 
-    public context() {
+    public context(): {
+        name: string,
+        id: string,
+        message: string
+    } {
         return {
             name: "Subject",
             id: "5e6twgh3829djksnod090223",
@@ -61,7 +65,7 @@ class Subject implements Observable {
 }
 
 class Observer implements Notifiable {
-    constructor(private name: string) {}
+    constructor(private name: string) { }
 
     public update(payload: Record<string, string>): void {
         print("updating... ", this.name);
